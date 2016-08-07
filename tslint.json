@@ -1,0 +1,17 @@
+{
+    "extends": "tslint:recommended",
+    "rules": {
+        "quotemark": [
+            true,
+            "single"
+        ],
+        "align": [
+            true,
+            "statements"
+        ],
+        "no-console": [
+            false
+        ],
+        "forin": false
+    }
+}
