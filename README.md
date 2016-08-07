@@ -4,17 +4,9 @@ This is the README for your extension "unicode-latex". After writing up a brief 
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Simply execute the `Unicode: Insert Math Symbol` command and type in the name of your desired symbol or select it from the drop-down list.
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+![Insertion Demo](demo-insert.gif)
 
 ## Extension Settings
 
