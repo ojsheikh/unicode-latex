@@ -2,28 +2,41 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import {latexSymbols} from './latex';
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
+let latexItems: vscode.QuickPickItem[] = [];
+let pickOptions: vscode.QuickPickOptions = {
+    matchOnDescription: true,
+};
+
 export function activate(context: vscode.ExtensionContext) {
 
-    // Use the console to output diagnostic information (console.log) and errors (console.error)
-    // This line of code will only be executed once when your extension is activated
-    console.log('Congratulations, your extension "unicode-latex" is now active!');
+    latexItems = [];
+    for (let name in latexSymbols) {
+        latexItems.push({
+            description: name,
+            label: latexSymbols[name],
+        });
+    }
 
-    // The command has been defined in the package.json file
-    // Now provide the implementation of the command with  registerCommand
-    // The commandId parameter must match the command field in package.json
-    let disposable = vscode.commands.registerCommand('extension.sayHello', () => {
-        // The code you place here will be executed every time your command is executed
-
-        // Display a message box to the user
-        vscode.window.showInformationMessage('Hello World!');
+    let disposable = vscode.commands.registerCommand('unicode.insertMathSymbol', () => {
+        vscode.window.showQuickPick(latexItems, pickOptions).then(insertSymbol);
     });
 
     context.subscriptions.push(disposable);
 }
 
-// this method is called when your extension is deactivated
-export function deactivate() {
+function insertSymbol(item: vscode.QuickPickItem) {
+    if (!item) { return; }
+    let editor = vscode.window.activeTextEditor;
+    editor.edit( (editBuilder) => {
+        editBuilder.delete(editor.selection);
+    }).then( () => {
+        editor.edit( (editBuilder) => {
+            editBuilder.insert(editor.selection.start, item.label);
+        });
+    });
 }
+
+// this method is called when your extension is deactivated
+// export function deactivate() {}

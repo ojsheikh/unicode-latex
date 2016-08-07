@@ -1,9 +1,9 @@
 {
-    "name": "unicode-completion",
-    "displayName": "Unicode Completion",
-    "description": "Autocomplete and replace latex style names with unicode equivalents.",
+    "name": "unicode-latex",
+    "displayName": "Unicode Latex",
+    "description": "Insert unicode symbols for latex names",
     "version": "0.0.1",
-    "publisher": "oijazsh",
+    "publisher": "",
     "engines": {
         "vscode": "^1.0.0"
     },
@@ -11,13 +11,13 @@
         "Other"
     ],
     "activationEvents": [
-        "*"
+        "onCommand:unicode.insertMathSymbol"
     ],
     "main": "./out/src/extension",
     "contributes": {
         "commands": [{
-            "command": "extension.sayHello",
-            "title": "Hello World"
+            "command": "unicode.insertMathSymbol",
+            "title": "Unicode: Insert Math Symbol"
         }]
     },
     "scripts": {
