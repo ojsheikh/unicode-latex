@@ -2,7 +2,7 @@
     "name": "unicode-latex",
     "displayName": "Unicode Latex",
     "description": "Insert unicode symbols for latex names",
-    "version": "0.1.0",
+    "version": "0.1.3",
     "publisher": "oijaz",
     "author": {
         "name": "Omer Sheikh"
@@ -19,10 +19,12 @@
     ],
     "main": "./out/src/extension",
     "contributes": {
-        "commands": [{
-            "command": "unicode.insertMathSymbol",
-            "title": "Unicode: Insert Math Symbol"
-        }]
+        "commands": [
+            {
+                "command": "unicode.insertMathSymbol",
+                "title": "Unicode: Insert Math Symbol"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
