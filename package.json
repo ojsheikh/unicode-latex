@@ -2,8 +2,12 @@
     "name": "unicode-latex",
     "displayName": "Unicode Latex",
     "description": "Insert unicode symbols for latex names",
-    "version": "0.0.1",
-    "publisher": "",
+    "version": "0.1.0",
+    "publisher": "oijaz",
+    "author": {
+        "name": "Omer Sheikh"
+    },
+    "repository": "oijazsh/unicode-latex",
     "engines": {
         "vscode": "^1.0.0"
     },
