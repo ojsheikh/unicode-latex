@@ -2,7 +2,7 @@
     "name": "unicode-latex",
     "displayName": "Unicode Latex",
     "description": "Insert unicode symbols for latex names",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "publisher": "oijaz",
     "author": {
         "name": "Omer Sheikh"
