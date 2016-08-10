@@ -15,7 +15,8 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:unicode-latex.insertMathSymbol"
+        "onCommand:unicode-latex.insertMathSymbol",
+        "onCommand:unicode-latex.replaceLatexNames"
     ],
     "main": "./out/src/extension",
     "contributes": {
@@ -23,6 +24,10 @@
             {
                 "command": "unicode-latex.insertMathSymbol",
                 "title": "Unicode: Insert Math Symbol"
+            },
+            {
+                "command": "unicode-latex.replaceLatexNames",
+                "title": "Unicode: Replace LaTeX"
             }
         ]
     },
