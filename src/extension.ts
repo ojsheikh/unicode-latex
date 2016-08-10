@@ -39,4 +39,4 @@ function insertSymbol(item: vscode.QuickPickItem) {
 }
 
 // this method is called when your extension is deactivated
-// export function deactivate() {}
+export function deactivate() {}

@@ -12,6 +12,7 @@
         "no-console": [
             false
         ],
-        "forin": false
+        "forin": false,
+        "no-empty": false
     }
 }
