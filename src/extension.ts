@@ -19,7 +19,7 @@ export function activate(context: vscode.ExtensionContext) {
         });
     }
 
-    let disposable = vscode.commands.registerCommand('unicode.insertMathSymbol', () => {
+    let disposable = vscode.commands.registerCommand('unicode-latex.insertMathSymbol', () => {
         vscode.window.showQuickPick(latexItems, pickOptions).then(insertSymbol);
     });
 
