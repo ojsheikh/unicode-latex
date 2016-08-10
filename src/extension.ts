@@ -60,7 +60,10 @@ function replaceWithUnicode(editor: vscode.TextEditor) {
 
     let text = editor.document.getText(selection);
     let replacement = text.replace(RE_LATEX_NAME, (m: string) => {
-        return latexSymbols[m];
+        if (latexSymbols.hasOwnProperty(m)) {
+            return latexSymbols[m];
+        }
+        return m;
     });
 
     editor.edit((editBuilder) => {
