@@ -173,6 +173,7 @@ export const latexSymbols = {
     '\\mho': '℧',
     '\\mid': '∣',
     '\\neg': '¬',
+    '\\neq': '≠', 
     '\\nis': '⋼',
     '\\nni': '∌',
     '\\not': '̸',
