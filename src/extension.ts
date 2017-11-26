@@ -1,8 +1,6 @@
-'use strict';
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import {latexSymbols} from './latex';
+import {LatexCompletionItemProvider} from './completion'
 
 const RE_LATEX_NAME = /(\\\S+)/g;
 
@@ -28,13 +26,20 @@ export function activate(context: vscode.ExtensionContext) {
         replaceWithUnicode(vscode.window.activeTextEditor);
     });
 
+    const selector: vscode.DocumentSelector = ['plaintext', 'markdown'];
+    const provider = new LatexCompletionItemProvider(latexSymbols);
+    let completionSub = vscode.languages.registerCompletionItemProvider(selector, provider, '\\');
+
     context.subscriptions.push(insertion);
     context.subscriptions.push(replacement);
+    context.subscriptions.push(completionSub);
 }
 
 function insertSymbol(item: vscode.QuickPickItem) {
     if (!item) { return; }
     let editor = vscode.window.activeTextEditor;
+    if (!editor) { return; }
+
     editor.edit( (editBuilder) => {
         editBuilder.delete(editor.selection);
     }).then( () => {
@@ -45,7 +50,9 @@ function insertSymbol(item: vscode.QuickPickItem) {
 }
 
 function replaceWithUnicode(editor: vscode.TextEditor) {
+    if (!editor) { return; }
 
+    // If nothing is selected, select everything
     let selection = (() => {
         if (editor.selection.start.isBefore(editor.selection.end)) {
             return editor.selection;
