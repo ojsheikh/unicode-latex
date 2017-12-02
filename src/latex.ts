@@ -132,6 +132,7 @@ export const latexSymbols = {
     '\\rq': '’',
     '\\ss': 'ß',
     '\\th': 'þ',
+    '\\to': '→',
     '\\wp': '℘',
     '\\wr': '≀',
     '\\xi': 'ξ',
