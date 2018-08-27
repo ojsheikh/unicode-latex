@@ -16,7 +16,7 @@ export class LatexCompletionItemProvider implements vscode.CompletionItemProvide
     public provideCompletionItems(doc: vscode.TextDocument, pos: vscode.Position)
         : vscode.CompletionItem[]
     {
-        const word = doc.getWordRangeAtPosition(pos, /\\[\^_]?[^\s\\]*/);
+        const word = doc.getWordRangeAtPosition(pos, /\\[\^_]?[^\s\\]*/).with(undefined, pos);
         if (!word) {
             return [];
         }
