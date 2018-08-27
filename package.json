@@ -1,45 +1,45 @@
 {
-    "name": "unicode-latex",
-    "displayName": "Unicode Latex",
-    "description": "Insert unicode symbols for latex names",
-    "version": "1.1.0",
-    "publisher": "oijaz",
-    "author": {
-        "name": "Omer Sheikh"
-    },
-    "repository": "oijazsh/unicode-latex",
-    "engines": {
-        "vscode": "^1.17.0"
-    },
-    "categories": [
-        "Other"
-    ],
-    "activationEvents": [
-        "onCommand:unicode-latex.insertMathSymbol",
-        "onCommand:unicode-latex.replaceLatexNames",
-        "onLanguage:plaintext"
-    ],
-    "main": "./out/src/extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "unicode-latex.insertMathSymbol",
-                "title": "Unicode: Insert Math Symbol"
-            },
-            {
-                "command": "unicode-latex.replaceLatexNames",
-                "title": "Unicode: Replace LaTeX"
-            }
-        ]
-    },
-    "scripts": {
-        "vscode:prepublish": "tsc -p ./",
-        "compile": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install"
-    },
-    "devDependencies": {
-        "typescript": "^2.0.3",
-        "vscode": "^1.1.7",
-        "@types/node": "^6.0.40"
-    }
+  "name": "unicode-latex",
+  "displayName": "Unicode Latex",
+  "description": "Insert unicode symbols for latex names",
+  "version": "1.1.1",
+  "publisher": "oijaz",
+  "author": {
+    "name": "Omer Sheikh"
+  },
+  "repository": "oijazsh/unicode-latex",
+  "engines": {
+    "vscode": "^1.17.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:unicode-latex.insertMathSymbol",
+    "onCommand:unicode-latex.replaceLatexNames",
+    "onLanguage:plaintext"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "unicode-latex.insertMathSymbol",
+        "title": "Unicode: Insert Math Symbol"
+      },
+      {
+        "command": "unicode-latex.replaceLatexNames",
+        "title": "Unicode: Replace LaTeX"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "typescript": "^2.0.3",
+    "vscode": "^1.1.7",
+    "@types/node": "^6.0.40"
+  }
 }
