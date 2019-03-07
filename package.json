@@ -17,7 +17,8 @@
   "activationEvents": [
     "onCommand:unicode-latex.insertMathSymbol",
     "onCommand:unicode-latex.replaceLatexNames",
-    "onLanguage:plaintext"
+    "onLanguage:plaintext",
+    "onLanguage:textile"
   ],
   "main": "./out/src/extension",
   "contributes": {
