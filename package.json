@@ -17,6 +17,7 @@
   "activationEvents": [
     "onCommand:unicode-latex.insertMathSymbol",
     "onCommand:unicode-latex.replaceLatexNames",
+    "onCommand:unicode-latex.showLatexCode",
     "onLanguage:plaintext"
   ],
   "main": "./out/src/extension",
@@ -29,6 +30,10 @@
       {
         "command": "unicode-latex.replaceLatexNames",
         "title": "Unicode: Replace LaTeX"
+      },
+      {
+        "command": "unicode-latex.showLatexCode",
+        "title": "Unicode: Show LaTex Code"
       }
     ]
   },

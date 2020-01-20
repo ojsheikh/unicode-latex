@@ -8,6 +8,7 @@ let latexItems: vscode.QuickPickItem[] = [];
 let pickOptions: vscode.QuickPickOptions = {
     matchOnDescription: true,
 };
+var latexSymbols2: { [name:string]: string} = {};
 
 export function activate(context: vscode.ExtensionContext) {
 
@@ -17,6 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
             description: name,
             label: latexSymbols[name],
         });
+        latexSymbols2[latexSymbols[name]] = name;
     }
 
     let insertion = vscode.commands.registerCommand('unicode-latex.insertMathSymbol', () => {
@@ -25,6 +27,9 @@ export function activate(context: vscode.ExtensionContext) {
     let replacement = vscode.commands.registerCommand('unicode-latex.replaceLatexNames', () => {
         replaceWithUnicode(vscode.window.activeTextEditor);
     });
+    let showLatex = vscode.commands.registerCommand('unicode-latex.showLatexCode', () => {
+        appendLatexOfUnicode(vscode.window.activeTextEditor);
+    });
 
     const selector: vscode.DocumentSelector = ['plaintext', 'markdown', 'coq'];
     const provider = new LatexCompletionItemProvider(latexSymbols);
@@ -32,6 +37,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     context.subscriptions.push(insertion);
     context.subscriptions.push(replacement);
+    context.subscriptions.push(showLatex);
     context.subscriptions.push(completionSub);
 }
 
@@ -78,5 +84,24 @@ function replaceWithUnicode(editor: vscode.TextEditor) {
     });
 }
 
+function appendLatexOfUnicode(editor: vscode.TextEditor) {
+    if (!editor) { return; }
+
+    // If nothing is selected, do nothing
+    let selection = (() => {
+        if (editor.selection.start.isBefore(editor.selection.end)) {
+            return editor.selection;
+        } else {
+            return;
+        }
+    })();
+
+    let text = editor.document.getText(selection);
+    if (latexSymbols2.hasOwnProperty(text)){
+        editor.edit((editBuilder) => {
+            editBuilder.insert(editor.selection.end, latexSymbols2[text]);
+        });
+    }
+}
 // this method is called when your extension is deactivated
 export function deactivate() {}
