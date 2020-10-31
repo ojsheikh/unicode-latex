@@ -30,7 +30,25 @@
         "command": "unicode-latex.replaceLatexNames",
         "title": "Unicode: Replace LaTeX"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Unicode Latex",
+      "properties": {
+        "unicode-latex.extensions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "plaintext",
+            "markdown",
+            "coq"
+          ],
+          "description": "Enable \\ completion for these extensions"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "tsc -p ./",

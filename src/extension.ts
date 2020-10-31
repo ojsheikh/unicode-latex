@@ -26,7 +26,7 @@ export function activate(context: vscode.ExtensionContext) {
         replaceWithUnicode(vscode.window.activeTextEditor);
     });
 
-    const selector: vscode.DocumentSelector = ['plaintext', 'markdown', 'coq'];
+    const selector: vscode.DocumentSelector = vscode.workspace.getConfiguration("unicode-latex").extensions;
     const provider = new LatexCompletionItemProvider(latexSymbols);
     let completionSub = vscode.languages.registerCompletionItemProvider(selector, provider, '\\');
 
