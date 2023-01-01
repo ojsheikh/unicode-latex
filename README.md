@@ -13,3 +13,7 @@ To insert a symbol, simply execute the `Unicode: Insert Math Symbol` command and
 Similarly, to replace all LaTeX symbol names in a group of text, use the command `Unicode: Replace LaTeX`. If no text is highlighted, this command will act on the whole document. Otherwise, it will act on the selected text.
 
 ![Replacement Demo](https://raw.githubusercontent.com/oijazsh/unicode-latex/master/demo-replace.gif)
+
+## Configuration
+
+By default, this extension is only active in plaintext, markdown and coq files. You may add additional languages to support in `unicode-latex.extensions`. See https://code.visualstudio.com/docs/languages/identifiers#_known-language-identifiers for valid values.
