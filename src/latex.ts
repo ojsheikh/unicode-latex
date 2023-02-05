@@ -276,7 +276,7 @@ export const latexSymbols = {
     '\\geqq': '≧',
     '\\gneq': '⪈',
     '\\gtcc': '⪧',
-    '\\hbar': 'ħ',
+    '\\hbar': 'ℏ',
     '\\iint': '∬',
     '\\intx': '⨘',
     '\\iota': 'ι',
