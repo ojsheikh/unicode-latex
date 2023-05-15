@@ -1846,7 +1846,7 @@ export const latexSymbols = {
     '\\upoldkoppa': 'ϙ',
     '\\upuparrows': '⇈',
     '\\urtriangle': '◹',
-    '\\varepsilon': 'ɛ',
+    '\\varepsilon': 'ε',
     '\\varhexagon': '⬡',
     '\\varnothing': '∅',
     '\\veemidvert': '⩛',
